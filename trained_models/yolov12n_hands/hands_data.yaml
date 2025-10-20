@@ -1,0 +1,6 @@
+names:
+  0: hand
+nc: 1
+test: /mnt/nas/BrunoScholles/PersonalLearning/InfiniteFoundry_Challenge/trained_models/yolov12n_hands/dataset/images/test
+train: /mnt/nas/BrunoScholles/PersonalLearning/InfiniteFoundry_Challenge/trained_models/yolov12n_hands/dataset/images/train
+val: /mnt/nas/BrunoScholles/PersonalLearning/InfiniteFoundry_Challenge/trained_models/yolov12n_hands/dataset/images/val

@@ -12,7 +12,7 @@ from typing import Dict, Optional, Tuple
 # CONSTANTS
 # -------------------------
 MODEL_PATH = Path("/mnt/nas/BrunoScholles/PersonalLearning/InfiniteFoundry_Challenge/trained_models/yolov12n_hands/yolov12_hands_run/weights/best.pt")
-INPUT_VIDEO = Path("/mnt/nas/BrunoScholles/PersonalLearning/Dataset_Infinite/tarefas_cima_Trim.mp4")
+INPUT_VIDEO = Path("/mnt/nas/BrunoScholles/PersonalLearning/Dataset_Infinite/tarefas_cima.mp4")
 OUTPUT_VIDEO = Path("/mnt/nas/BrunoScholles/PersonalLearning/Dataset_Infinite/outupt_video/output_video_detected.mp4")
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
@@ -215,6 +215,7 @@ def detect_probe_pass(hands, img, state):
         state["delay_frames"] = 0
         state["prev_crop"] = None
         state["phase0_green_frames"] = 0
+        state["roi_green_until"] = 0.0  # <--- ADICIONADO: Reseta o timer da ROI
         return state, img
 
     x1l, y1l, x2l, y2l = left
@@ -236,6 +237,7 @@ def detect_probe_pass(hands, img, state):
         state["delay_frames"] = 0
         state["prev_crop"] = None
         state["phase0_green_frames"] = 0
+        state["roi_green_until"] = 0.0  # <--- ADICIONADO: Reseta o timer da ROI
         return state, img
 
     if state.get("monitoring", False) and state.get("phase", 0) in (0, 1):
@@ -260,6 +262,10 @@ def detect_probe_pass(hands, img, state):
             state["prev_crop"] = None
             state["last_detection_time"] = now
             state["phase0_green_frames"] = 14
+            # --------------------------------------------------
+            # LINHA REMOVIDA:
+            # state["roi_green_until"] = now + 1.0  <-- Esta linha estava errada e foi removida.
+            # --------------------------------------------------
             cv2.putText(img, "Probe Pass +1 (phase0)", (700, 130),
                         cv2.FONT_HERSHEY_SIMPLEX, 1.2, (0, 255, 100), 3, cv2.LINE_AA)
 
@@ -268,6 +274,22 @@ def detect_probe_pass(hands, img, state):
 
     # ----- FASE 1 -----
     if state["phase"] == 1 and state.get("monitoring", False):
+
+        # --- NOVA CONDIÇÃO DE ABORTO (Fase 1) ---
+        # Se o canto superior esquerdo da mão direita (x1r) se afastar
+        # mais de 150 pixels da aresta direita da mão esquerda (x2l).
+        dist_x = x1r - x2l
+        if dist_x > 150:
+            # Reseta o estado, voltando para a Fase 0 (ou estado neutro)
+            state["phase"] = 0
+            state["monitoring"] = False # Interrompe o monitoramento atual
+            state["delay_frames"] = 0
+            state["prev_crop"] = None
+            state["phase0_green_frames"] = 0
+            state["roi_green_until"] = 0.0
+            return state, img # Sai da detecção neste frame
+        # --- FIM DA NOVA CONDIÇÃO ---
+
         state["delay_frames"] += 1
 
         if state["phase0_green_frames"] > 0 and right is not None:
@@ -455,3 +477,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+

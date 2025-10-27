@@ -56,12 +56,26 @@ Run it by passing the paths to the dataset, the pretrained weights, and the outp
 - \--output\_dir /path/to/trained_models/run_name | path to your trained model folder
 
 **Usage Example:**
+
+First, activate the environment:
+
 ```bash
 conda activate infinite
+```
+
+To run training using the default paths (the script finds them automatically, as long as the files are in the expected locations):
+
+```bash
+python src/inference/main.py
+```
+
+To specify the paths manually:
+
+```bash
 python src/training/train_hand_detector.py --base_dir /path/to/dataset/train --weights /path/to/yolov12n.pt --output_dir /path/to/trained_models/run_name
 ```
 
-If no arguments are provided, the script will use the default directories. However, this is only recommended if your project structure is complete. Otherwise, you should explicitly provide the required paths as arguments. The best model will be saved in your output directory under `/weights/best.pt`.
+> If no arguments are provided, the script will use the default directories. However, this is only recommended if your project structure is complete. Otherwise, you should explicitly provide the required paths as arguments. The best model will be saved in your output directory under `/weights/best.pt`.
 
 ---
 
@@ -102,3 +116,5 @@ python src/inference/main.py --model_path path/to/hand/trained/model.pt --input_
 ```
 
 The processed video will be saved at the specified output path (by default, in `results/output_video_detections.mp4`).
+
+> If no arguments are provided, the script will use the default directories. However, this is only recommended if your project structure is complete. Otherwise, you should explicitly provide the required paths as arguments.

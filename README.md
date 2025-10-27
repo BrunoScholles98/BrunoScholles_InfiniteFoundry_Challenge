@@ -37,17 +37,9 @@ conda activate infinite
 python3 -c "import torch; print(torch.cuda.is_available()); print(torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'No CUDA detected')"
 ```
 
-Expected output (depending on your hardware):
-```bash
-True
-NVIDIA GeForce RTX 4090
-```
+Expected output (depending on your hardware): `True   NVIDIA GeForce RTX 4090`
 
-If CUDA is not available:
-```bash
-False
-No CUDA detected
-```
+Otherwise, if CUDA is not available: `False   No CUDA detected`
 
 ### Step 3: YOLOv12 Dependencies Installation
 

@@ -9,7 +9,9 @@
 
 # Bruno Scholles | Infinite Foundry Technical Challenge — Computer Vision & Robotics Engineer
 
-This repository contains the full solution developed for the **Infinite Foundry Technical Challenge**. The code was executed on a **remote Linux (Ubuntu) server**, and the **inference pipeline outputs an annotated `.mp4` video** showing the detected hand operations and metrics dashboard.
+This repository contains the full solution developed for the **Infinite Foundry Technical Challenge**. The code was executed on a **remote Linux (Ubuntu) server**, and the **inference pipeline outputs an annotated `.mp4` video** showing the detected hand operations and metrics dashboard. 
+
+**All the commands shown here assume that you are using the Linux terminal in the root folder `/BrunoScholles_InfiniteFoundry_Challenge`**.
 
 The repository is organized as follows:
 
@@ -54,7 +56,7 @@ chmod +x install_yolov12.sh
 ./install_yolov12.sh
 ```
 
-> **Important:**
+> ⚠️ **Important:**
 > When you run this script (**`install_yolov12.sh`**), a folder named **`yolov12`** will be automatically created in the project directory.
 > This folder contains essential dependencies and files required for the model to work properly. **Do not delete or move it under any circumstances**, as doing so will cause errors during training and inference.
 

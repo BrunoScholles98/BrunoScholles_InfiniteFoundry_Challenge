@@ -1,5 +1,18 @@
 # Bruno Scholles | Infinite Foundry Technical Challenge — Computer Vision & Robotics Engineer
 
+This repository contains the full solution developed for the **Infinite Foundry Technical Challenge**. The code was executed on a **remote server**, and the **inference pipeline outputs an annotated `.mp4` video** showing the detected hand operations and metrics dashboard.
+
+The repository is organized as follows:
+
+* **`dataset_challenge_hands/`** – Contains the provided dataset and metadata for training.
+* **`src/training/`** – Includes the training pipeline (`train_hand_detector.py`) and baseline YOLOv12 weights.
+* **`src/inference/`** – Main inference logic. The core script `main.py` loads the trained model and processes the input video, producing the output video with detections and overlays.
+* **`trained_models/`** – Stores the trained YOLOv12 model (`best.pt`) and configuration files.
+* **`results/`** – Contains final processed videos (e.g., `output_video_detect_RTX3090.mp4`).
+
+> **If you’re viewing this file via Google Drive, it’s strongly recommended to open the repository directly on GitHub for better display and navigation:**
+> **[https://github.com/BrunoScholles98/BrunoScholles_InfiniteFoundry_Challenge](https://github.com/BrunoScholles98/BrunoScholles_InfiniteFoundry_Challenge)**
+
 ---
 
 ## 1. Environment Installation

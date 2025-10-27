@@ -10,7 +10,7 @@ The repository is organized as follows:
 * **`trained_models/`** – Stores the trained YOLOv12 model (`best.pt`) and configuration files.
 * **`results/`** – Contains final processed videos (e.g., `output_video_detect_RTX3090.mp4`).
 
-> **If you’re viewing this file via Google Drive, it’s strongly recommended to open the repository directly on GitHub for better display and navigation:**
+> **If you’re viewing this file via Google Drive, it’s strongly recommended to open the repository directly on GitHub for better display and navigation for this README file:**
 > **[https://github.com/BrunoScholles98/BrunoScholles_InfiniteFoundry_Challenge](https://github.com/BrunoScholles98/BrunoScholles_InfiniteFoundry_Challenge)**
 
 ---

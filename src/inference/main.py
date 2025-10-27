@@ -1,3 +1,11 @@
+"""
+Usage example (in my case):
+python main.py \
+    --base_dir /mnt/nas/BrunoScholles/PersonalLearning/Dataset_Infinite/challenge_hands/train \
+    --weights /mnt/nas/BrunoScholles/PersonalLearning/InfiniteFoundry_Challenge/YOLOv12_Baseline_Weights/yolov12n.pt \
+    --output_dir /mnt/nas/BrunoScholles/PersonalLearning/InfiniteFoundry_Challenge/trained_models/yolov12n_hands_new
+"""
+
 from ultralytics import YOLO
 import cv2
 from pathlib import Path
@@ -21,22 +29,21 @@ from utils.metrics import update_operation_metrics
 from utils.drawing import draw_metrics_panel, draw_piece_in_box_alert
 
 
-# =========================
-# CONSTANTS
-# =========================
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 CONF_THRES = 0.5
 
 
-# =========================
-# MAIN
-# =========================
 def main():
+    
+    # Determine script path to build fallback paths dynamically
+    script_path = Path(__file__).resolve()
+    script_dir = script_path.parent
+
     # Command-line arguments with defaults in the script directory
     base_dir = Path(__file__).resolve().parent
-    default_model = base_dir / "trained_models" / "yolov12n_hands" / "yolov12_hands_run" / "weights" / "best.pt"
-    default_input = base_dir / "tarefas_cima.mp4"
-    default_output = base_dir / "output_video_detections.mp4"
+    default_model = script_dir.parent.parent / "trained_models" / "yolov12n_hands" / "yolov12_hands_run" / "weights" / "best.pt"
+    default_input = script_dir.parent.parent / "tarefas_cima.mp4"
+    default_output = script_dir.parent.parent / "results" / "output_video_detections.mp4"
 
     parser = argparse.ArgumentParser(description="Hand operations analytics with YOLO (paths via CLI).")
     parser.add_argument("--model_path", type=Path, default=default_model, help="Path to the .pt model")

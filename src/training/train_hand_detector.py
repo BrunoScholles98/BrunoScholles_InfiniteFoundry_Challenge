@@ -113,7 +113,7 @@ def main():
     default_weights = script_dir / "YOLOv12_Baseline_Weights" / "yolov12n.pt"
 
     # Default fallback output: one level above this script
-    default_output = script_dir.parent / "trained_models" / "yolov12n_hands_new"
+    default_output = script_dir.parent.parent / "trained_models" / "yolov12n_hands_new"
 
     # Resolve paths safely with fallbacks
     base_dir = Path(args.base_dir) if args.base_dir and Path(args.base_dir).exists() else default_dataset

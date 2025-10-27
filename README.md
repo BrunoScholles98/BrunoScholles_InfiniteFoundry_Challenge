@@ -51,9 +51,9 @@ However, this step isn’t necessary, since I’ve already provided a trained mo
 Run it by passing the paths to the dataset, the pretrained weights, and the output directory.
 
 **Arguments:**
-> --base_dir | path to the dataset training folder (already provided in the folder /training/YOLOv12_Baseline_Weights/yolov12n.pt)
-> --weights | path to the pre-trained YOLOv12 weights (already provided in the folder /challenge_hands/train)
-> --output_dir /path/to/trained_models/run_name | path to your trained model folder
+- \--base\_dir | path to the dataset training folder (already provided in the folder /training/YOLOv12_Baseline_Weights/yolov12n.pt)
+- \--weights | path to the pre-trained YOLOv12 weights (already provided in the folder /challenge_hands/train)
+- \--output\_dir /path/to/trained_models/run_name | path to your trained model folder
 
 **Usage Example:**
 ```bash
@@ -77,9 +77,9 @@ This script loads the trained YOLOv12 model (provided in `trained_models/`) to d
 The script generates an output video (`.mp4`) with the detections drawn (bounding boxes, reference lines) and a real-time metrics panel.
 
 **Arguments:**
-\--model\_path | Path to the trained .pt model file. (Default: `trained_models/yolov12n_hands/yolov12_hands_run/weights/best.pt`)
-\--input\_video | Path to the input video to be processed. (Default: `tarefas_cima.mp4`)
-\--output\_video | Path to save the resulting output video. (Default: `results/output_video_detections.mp4`)
+- \--model\_path | Path to the trained .pt model file. (Default: `trained_models/yolov12n_hands/yolov12_hands_run/weights/best.pt`)
+- \--input\_video | Path to the input video to be processed. (Default: `tarefas_cima.mp4`)
+- \--output\_video | Path to save the resulting output video. (Default: `results/output_video_detections.mp4`)
 
 Usage Example:
 First, activate the environment:

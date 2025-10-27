@@ -1,3 +1,9 @@
+## Contents
+
+1. [Environment Installation](#inst)
+2. [Hand Detection Training (Optional)](#train)
+3. [Inference Code (Main Code)](#inf)
+
 # Bruno Scholles | Infinite Foundry Technical Challenge — Computer Vision & Robotics Engineer
 
 This repository contains the full solution developed for the **Infinite Foundry Technical Challenge**. The code was executed on a **remote Linux (Ubuntu) server**, and the **inference pipeline outputs an annotated `.mp4` video** showing the detected hand operations and metrics dashboard.
@@ -15,6 +21,7 @@ The repository is organized as follows:
 
 ---
 
+<a name="inst"></a>
 ## 1. Environment Installation
 
 ### Step 1: Create and activate the conda environment
@@ -55,6 +62,7 @@ chmod +x install_yolov12.sh
 
 ---
 
+<a name="train"></a>
 ## 2. Hand Detection Training (Optional)
 
 The `train_hand_detector.py` script (located in the `training/` folder) automates the entire process. It automatically prepares the dataset (splitting it into train/validation/test sets) and starts the YOLOv12 training.
@@ -93,6 +101,7 @@ The best model will be saved in your output directory under `/weights/best.pt`.
 
 ---
 
+<a name="inf"></a>
 ## 3. Inference Code (Main Code)
 
 This script loads the trained YOLOv12 model (provided in `trained_models/`) to detect hands in an input video. Based on the position and interaction of the detected hands, it applies specific detection logic (located in `src/detectors/`) to count four main operations:

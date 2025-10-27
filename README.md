@@ -35,6 +35,11 @@ No CUDA detected
 chmod +x install_yolov12.sh
 ./install_yolov12.sh
 ```
+
+> **Important:**
+> When you run this script (**`install_yolov12.sh`**), a folder named **`yolov12`** will be automatically created in the project directory.
+> This folder contains essential dependencies and files required for the model to work properly. **Do not delete or move it under any circumstances**, as doing so will cause errors during training and inference.
+
 ---
 
 ## 2. Hand Detection Training (Optional)
@@ -45,19 +50,54 @@ However, this step isn’t necessary, since I’ve already provided a trained mo
 
 Run it by passing the paths to the dataset, the pretrained weights, and the output directory.
 
-Arguments:
---base_dir | path to the dataset training folder (already provided in the folder /training/YOLOv12_Baseline_Weights/yolov12n.pt)
---weights | path to the pre-trained YOLOv12 weights (already provided in the folder /challenge_hands/train)
---output_dir /path/to/trained_models/run_name | path to your trained model folder
+**Arguments:**
+> --base_dir | path to the dataset training folder (already provided in the folder /training/YOLOv12_Baseline_Weights/yolov12n.pt)
+> --weights | path to the pre-trained YOLOv12 weights (already provided in the folder /challenge_hands/train)
+> --output_dir /path/to/trained_models/run_name | path to your trained model folder
 
-Usage Example:
+**Usage Example:**
 ```bash
 conda activate infinite
-python training/train_hand_detector.py --base_dir /path/to/dataset/train --weights /path/to/yolov12n.pt --output_dir /path/to/trained_models/run_name
+python src/training/train_hand_detector.py --base_dir /path/to/dataset/train --weights /path/to/yolov12n.pt --output_dir /path/to/trained_models/run_name
 ```
 
-If no arguments are provided, the script will attempt to use default paths, however, this is not recommended. Please provide the paths explicitly as arguments. The best model will be at your output directory, in /weights/best.pt
+If no arguments are provided, the script will use the default directories. However, this is only recommended if your project structure is complete. Otherwise, you should explicitly provide the required paths as arguments. The best model will be saved in your output directory under `/weights/best.pt`.
 
 ---
 
 ## 3. Inference Code (Main Code)
+
+This script loads the trained YOLOv12 model (provided in `trained_models/`) to detect hands in an input video. Based on the position and interaction of the detected hands, it applies specific detection logic (located in `src/detectors/`) to count four main operations:
+
+1.  **Pick Piece:** When a hand crosses a horizontal reference line.
+2.  **Place in Box:** Based on a heuristic for when only one hand is visible for a short period.
+3.  **Pen-mark:** When both hands are close and stable for a time.
+4.  **Probe-pass:** A state machine that tracks the specific interaction of the hand with the probe.
+
+The script generates an output video (`.mp4`) with the detections drawn (bounding boxes, reference lines) and a real-time metrics panel.
+
+**Arguments:**
+\--model\_path | Path to the trained .pt model file. (Default: `trained_models/yolov12n_hands/yolov12_hands_run/weights/best.pt`)
+\--input\_video | Path to the input video to be processed. (Default: `tarefas_cima.mp4`)
+\--output\_video | Path to save the resulting output video. (Default: `results/output_video_detections.mp4`)
+
+Usage Example:
+First, activate the environment:
+
+```bash
+conda activate infinite
+```
+
+To run inference using the default paths (the script finds them automatically, as long as the files are in the expected locations):
+
+```bash
+python src/inference/main.py
+```
+
+To specify the paths manually (recommended):
+
+```bash
+python src/inference/main.py --model_path path/to/hand/trained/model.pt --input_video path/to/trained/inference/video.mp4 --output_video path/to/output/video.mp4
+```
+
+The processed video will be saved at the specified output path (by default, in `results/output_video_detections.mp4`).

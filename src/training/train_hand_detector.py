@@ -107,7 +107,7 @@ def main():
     script_dir = script_path.parent
 
     # Default fallback dataset: one level above, under /challenge_hands/train
-    default_dataset = script_dir.parent / "challenge_hands" / "train"
+    default_dataset = script_dir.parent.parent / "dataset_challenge_hands" / "train"
 
     # Default fallback weights: located under the script directory
     default_weights = script_dir / "YOLOv12_Baseline_Weights" / "yolov12n.pt"

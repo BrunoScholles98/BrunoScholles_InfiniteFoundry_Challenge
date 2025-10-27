@@ -39,11 +39,9 @@ chmod +x install_yolov12.sh
 
 ## 2. Hand Detection Training (Optional)
 
-The `train_hand_detector.py` script (located in the `training/` folder) automates the entire process.
-It automatically prepares the dataset (splitting it into train/validation/test sets) and starts the YOLOv12 training.
+The `train_hand_detector.py` script (located in the `training/` folder) automates the entire process. It automatically prepares the dataset (splitting it into train/validation/test sets) and starts the YOLOv12 training.
 
-However, this step isn’t necessary, since I’ve already provided a trained model trained with
-the data provided (located in the /trained_models/yolov12n_hands/yolov12_hands_run/weights/best.pt).
+However, this step isn’t necessary, since I’ve already provided a trained model trained with the data provided (located in the /trained_models/yolov12n_hands/yolov12_hands_run/weights/best.pt).
 
 Run it by passing the paths to the dataset, the pretrained weights, and the output directory.
 
@@ -58,8 +56,7 @@ conda activate infinite
 python training/train_hand_detector.py --base_dir /path/to/dataset/train --weights /path/to/yolov12n.pt --output_dir /path/to/trained_models/run_name
 ```
 
-If no arguments are provided, the script will attempt to use default paths, however, this is not recommended.
-Please provide the paths explicitly as arguments. The best model will be at your output directory, in /weights/best.pt
+If no arguments are provided, the script will attempt to use default paths, however, this is not recommended. Please provide the paths explicitly as arguments. The best model will be at your output directory, in /weights/best.pt
 
 ---
 

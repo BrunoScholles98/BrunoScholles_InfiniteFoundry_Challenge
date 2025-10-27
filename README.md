@@ -81,7 +81,8 @@ The script generates an output video (`.mp4`) with the detections drawn (boundin
 - \--input\_video | Path to the input video to be processed. (Default: `tarefas_cima.mp4`)
 - \--output\_video | Path to save the resulting output video. (Default: `results/output_video_detections.mp4`)
 
-Usage Example:
+**Usage Example:**
+
 First, activate the environment:
 
 ```bash

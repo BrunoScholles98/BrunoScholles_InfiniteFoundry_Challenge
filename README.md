@@ -28,6 +28,9 @@ The repository is organized as follows:
 
 ```bash
 conda env create -f environment.yml -n infinite
+```
+
+```bash
 conda activate infinite
 ```
 

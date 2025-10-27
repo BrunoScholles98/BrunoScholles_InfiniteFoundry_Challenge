@@ -53,6 +53,9 @@ No CUDA detected
 
 ```bash
 chmod +x install_yolov12.sh
+```
+
+```bash
 ./install_yolov12.sh
 ```
 

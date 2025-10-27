@@ -66,7 +66,7 @@ conda activate infinite
 To run training using the default paths (the script finds them automatically, as long as the files are in the expected locations):
 
 ```bash
-python src/inference/main.py
+python src/training/train_hand_detector.py
 ```
 
 To specify the paths manually:

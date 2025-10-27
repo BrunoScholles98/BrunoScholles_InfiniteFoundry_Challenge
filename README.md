@@ -74,8 +74,9 @@ To specify the paths manually:
 ```bash
 python src/training/train_hand_detector.py --base_dir /path/to/dataset/train --weights /path/to/yolov12n.pt --output_dir /path/to/trained_models/run_name
 ```
+The best model will be saved in your output directory under `/weights/best.pt`.
 
-> If no arguments are provided, the script will use the default directories. However, this is only recommended if your project structure is complete. Otherwise, you should explicitly provide the required paths as arguments. The best model will be saved in your output directory under `/weights/best.pt`.
+> If no arguments are provided, the script will use the default directories. However, this is only recommended if your project structure is complete. Otherwise, you should explicitly provide the required paths as arguments.
 
 ---
 

@@ -1,6 +1,6 @@
 # Bruno Scholles | Infinite Foundry Technical Challenge — Computer Vision & Robotics Engineer
 
-This repository contains the full solution developed for the **Infinite Foundry Technical Challenge**. The code was executed on a **remote server**, and the **inference pipeline outputs an annotated `.mp4` video** showing the detected hand operations and metrics dashboard.
+This repository contains the full solution developed for the **Infinite Foundry Technical Challenge**. The code was executed on a **remote Linux (Ubuntu) server**, and the **inference pipeline outputs an annotated `.mp4` video** showing the detected hand operations and metrics dashboard.
 
 The repository is organized as follows:
 

@@ -95,7 +95,8 @@ python src/training/train_hand_detector.py --base_dir /path/to/dataset/train --w
 ```
 The best model will be saved in your output directory under `/weights/best.pt`.
 
-> If no arguments are provided, the script will use the default directories. However, this is only recommended if your project structure is complete. Otherwise, you should explicitly provide the required paths as arguments.
+> If no arguments are provided, the script will use the default directories. However, this is only recommended if you have not modified the original folder structure of the repository.
+> If, for any reason, you encounter an error when running the scripts without arguments, it is strongly recommended to explicitly pass the required paths as arguments.
 
 ---
 
@@ -138,4 +139,5 @@ python src/inference/main.py --model_path path/to/hand/trained/model.pt --input_
 
 The processed video will be saved at the specified output path (by default, in `results/output_video_detections.mp4`).
 
-> If no arguments are provided, the script will use the default directories. However, this is only recommended if your project structure is complete. Otherwise, you should explicitly provide the required paths as arguments.
+> If no arguments are provided, the script will use the default directories. However, this is only recommended if you have not modified the original folder structure of the repository.
+> If, for any reason, you encounter an error when running the scripts without arguments, it is strongly recommended to explicitly pass the required paths as arguments.

@@ -3,9 +3,11 @@
 
 ## Contents
 
-1. [Environment Installation](#inst)
+1. [Repo & Environment Installation](#inst)
 2. [Hand Detection Training (Optional)](#train)
 3. [Inference Code (Main Code)](#inf)
+
+---
 
 # Bruno Scholles | Infinite Foundry Technical Challenge — Computer Vision & Robotics Engineer
 
@@ -24,9 +26,11 @@ The repository is organized as follows:
 ---
 
 <a name="inst"></a>
-## 1. Environment Installation
+## 1. Repo & Environment Installation
 
-### 📦 Before installing the environment and dependencies
+### 📦 Before cloning the repository (Git LFS)
+
+> **If you downloaded this repository via Google Drive, you can skip the Git LFS step and go straight to Step 1.**
 
 **This repository contains videos larger than 100 MB and therefore requires Git LFS**. If you don’t have Git LFS installed on your machine, run the following command in your terminal:
 
@@ -34,17 +38,21 @@ The repository is organized as follows:
 sudo apt install git-lfs
 ```
 
-After that, enable Git LFS in the repository and pull the large files (videos) with the following two commands:
+After that, enable Git LFS in your machine and clone the repository with the following two commands:
 
 ```bash
 git lfs install
 ```
 
 ```bash
-git lfs pull
+git clone https://github.com/BrunoScholles98/BrunoScholles_InfiniteFoundry_Challenge.git
 ```
 
 ### Step 1: Create and activate the conda environment
+
+```bash
+cd BrunoScholles_InfiniteFoundry_Challenge
+```
 
 ```bash
 conda env create -f environment.yml -n infinite
@@ -90,9 +98,9 @@ However, this step isn’t necessary, since I’ve already provided a trained mo
 Run it by passing the paths to the dataset, the pretrained weights, and the output directory.
 
 **Arguments:**
-- \--base\_dir | path to the dataset training folder (Default: `/training/YOLOv12_Baseline_Weights/yolov12n.pt`)
-- \--weights | path to the pre-trained YOLOv12 weights (Default: `/challenge_hands/train`)
-- \--output\_dir /path/to/trained_models/run_name | path to your trained model folder (Default: `trained_models/yolov12n_hands_new`)
+- \--base\_dir | path to the dataset training folder (Default: `/challenge_hands/train`)
+- \--weights | path to the pre-trained YOLOv12 weights (Default: `/training/YOLOv12_Baseline_Weights/yolov12n.pt`)
+- \--output\_dir | path to your output trained model folder (Default: `trained_models/yolov12n_hands_new`)
 
 **Usage Example:**
 
@@ -151,7 +159,7 @@ To run inference using the default paths (the script finds them automatically, a
 python src/inference/main.py
 ```
 
-To specify the paths manually (recommended):
+To specify the paths manually:
 
 ```bash
 python src/inference/main.py --model_path path/to/hand/trained/model.pt --input_video path/to/trained/inference/video.mp4 --output_video path/to/output/video.mp4

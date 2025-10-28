@@ -24,9 +24,9 @@ The repository is organized as follows:
 ---
 
 <a name="inst"></a>
-## 1. Environment Installation
+## 1. Repo & Environment Installation
 
-### 📦 Before installing the environment and dependencies
+### 📦 Before cloning the repository
 
 **This repository contains videos larger than 100 MB and therefore requires Git LFS**. If you don’t have Git LFS installed on your machine, run the following command in your terminal:
 
@@ -34,14 +34,14 @@ The repository is organized as follows:
 sudo apt install git-lfs
 ```
 
-After that, enable Git LFS in the repository and pull the large files (videos) with the following two commands:
+After that, enable Git LFS in your machine and clone the repository with the following two commands:
 
 ```bash
 git lfs install
 ```
 
 ```bash
-git lfs pull
+git clone https://github.com/BrunoScholles98/BrunoScholles_InfiniteFoundry_Challenge.git
 ```
 
 ### Step 1: Create and activate the conda environment

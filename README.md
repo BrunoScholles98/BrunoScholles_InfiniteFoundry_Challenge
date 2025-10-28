@@ -96,9 +96,9 @@ However, this step isn’t necessary, since I’ve already provided a trained mo
 Run it by passing the paths to the dataset, the pretrained weights, and the output directory.
 
 **Arguments:**
-- \--base\_dir | path to the dataset training folder (Default: `/training/YOLOv12_Baseline_Weights/yolov12n.pt`)
-- \--weights | path to the pre-trained YOLOv12 weights (Default: `/challenge_hands/train`)
-- \--output\_dir /path/to/trained_models/run_name | path to your trained model folder (Default: `trained_models/yolov12n_hands_new`)
+- \--base\_dir | path to the dataset training folder (Default: `/challenge_hands/train`)
+- \--weights | path to the pre-trained YOLOv12 weights (Default: `/training/YOLOv12_Baseline_Weights/yolov12n.pt`)
+- \--output\_dir | path to your output trained model folder (Default: `trained_models/yolov12n_hands_new`)
 
 **Usage Example:**
 

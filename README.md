@@ -26,6 +26,24 @@ The repository is organized as follows:
 <a name="inst"></a>
 ## 1. Environment Installation
 
+### Before installing the environment and dependencies
+
+**This repository contains videos larger than 100 MB and therefore requires Git LFS**. If you don’t have Git LFS installed on your machine, run the following command in your terminal:
+
+```bash
+sudo apt install git-lfs
+```
+
+After that, enable Git LFS in the repository and pull the large files (videos) with the following two commands:
+
+```bash
+git lfs install
+```
+
+```bash
+git lfs pull
+```
+
 ### Step 1: Create and activate the conda environment
 
 ```bash

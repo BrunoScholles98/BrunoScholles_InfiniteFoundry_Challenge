@@ -47,6 +47,10 @@ git clone https://github.com/BrunoScholles98/BrunoScholles_InfiniteFoundry_Chall
 ### Step 1: Create and activate the conda environment
 
 ```bash
+cd BrunoScholles_InfiniteFoundry_Challenge
+```
+
+```bash
 conda env create -f environment.yml -n infinite
 ```
 

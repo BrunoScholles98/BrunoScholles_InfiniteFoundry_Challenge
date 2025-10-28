@@ -32,7 +32,11 @@ The repository is organized as follows:
 
 > **If you downloaded this repository via Google Drive, you can skip the Git LFS step and go straight to Step 1.**
 
-**This repository contains videos larger than 100 MB and therefore requires Git LFS**. If you don’t have Git LFS installed on your machine, run the following command in your terminal:
+**This repository contains videos larger than 100 MB and therefore requires Git LFS**. If you don’t have Git LFS installed on your machine, run the following commands in your terminal:
+
+```bash
+sudo apt update
+```
 
 ```bash
 sudo apt install git-lfs

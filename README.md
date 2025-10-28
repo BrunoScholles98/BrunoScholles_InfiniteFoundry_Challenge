@@ -26,7 +26,9 @@ The repository is organized as follows:
 <a name="inst"></a>
 ## 1. Repo & Environment Installation
 
-### 📦 Before cloning the repository
+### 📦 Before cloning the repository (Git LFS)
+
+> **If you downloaded this repository via Google Drive, you can skip the Git LFS step and go straight to Step 1.**
 
 **This repository contains videos larger than 100 MB and therefore requires Git LFS**. If you don’t have Git LFS installed on your machine, run the following command in your terminal:
 

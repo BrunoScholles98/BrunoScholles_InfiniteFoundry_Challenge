@@ -22,7 +22,7 @@ The repository is organized as follows:
 * **`src/inference/`** – Main inference logic. The core script `main.py` loads the trained model and processes the input video, producing the output video with detections and overlays.
 * **`trained_models/`** – Stores the trained YOLOv12 model (`best.pt`) and configuration files.
 * **`results/`** – Contains final processed videos (e.g., `output_video_detect_RTX3090.mp4`).
-* * **`Report_BrunoScholles_InfiteFoundry_TechChallenge.pdf`** – Technical report describing technical methodologies, results, metrics and insights. 
+* **`Report_BrunoScholles_InfiteFoundry_TechChallenge.pdf`** – Technical report describing technical methodologies, results, metrics and insights. 
 
 ---
 

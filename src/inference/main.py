@@ -1,9 +1,9 @@
 """
 Usage example (in my case):
 python main.py \
-    --base_dir /mnt/nas/BrunoScholles/PersonalLearning/Dataset_Infinite/challenge_hands/train \
-    --weights /mnt/nas/BrunoScholles/PersonalLearning/InfiniteFoundry_Challenge/YOLOv12_Baseline_Weights/yolov12n.pt \
-    --output_dir /mnt/nas/BrunoScholles/PersonalLearning/InfiniteFoundry_Challenge/trained_models/yolov12n_hands_new
+    --model_path /mnt/nas/BrunoScholles/PersonalLearning/InfiniteFoundry_Challenge/trained_models/yolov12n_hands/yolov12_hands_run/weights/best.pt \
+    --input_video /mnt/nas/BrunoScholles/PersonalLearning/InfiniteFoundry_Challenge/tarefas_cima.mp4 \
+    --output_video /mnt/nas/BrunoScholles/PersonalLearning/InfiniteFoundry_Challenge/results/output_video_detections.mp4
 """
 
 from ultralytics import YOLO

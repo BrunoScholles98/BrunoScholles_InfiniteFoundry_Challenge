@@ -26,7 +26,7 @@ The repository is organized as follows:
 <a name="inst"></a>
 ## 1. Environment Installation
 
-### Before installing the environment and dependencies
+### 📦 Before installing the environment and dependencies
 
 **This repository contains videos larger than 100 MB and therefore requires Git LFS**. If you don’t have Git LFS installed on your machine, run the following command in your terminal:
 

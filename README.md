@@ -3,7 +3,7 @@
 
 ## Contents
 
-1. [Environment Installation](#inst)
+1. [Repo & Environment Installation](#inst)
 2. [Hand Detection Training (Optional)](#train)
 3. [Inference Code (Main Code)](#inf)
 
@@ -157,7 +157,7 @@ To run inference using the default paths (the script finds them automatically, a
 python src/inference/main.py
 ```
 
-To specify the paths manually (recommended):
+To specify the paths manually:
 
 ```bash
 python src/inference/main.py --model_path path/to/hand/trained/model.pt --input_video path/to/trained/inference/video.mp4 --output_video path/to/output/video.mp4
